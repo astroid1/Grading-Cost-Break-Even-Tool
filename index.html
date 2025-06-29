@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card Spotter – Grading Break-Even Tool</title>
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inconsolata', monospace;
+    html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       background-color: #FFFFFF;
       color: #000000;
-      margin: 0;
-      padding: 20px;
+      font-family: 'Inconsolata', monospace;
     }
     .container {
       max-width: 500px;
       margin: 0 auto;
+      padding: 20px;
     }
     input, select, button {
       width: 100%;
@@ -97,10 +100,8 @@
       const desiredProfit = parseFloat(document.getElementById('desiredProfit').value) || 0;
       const feeRate = getFeeRate();
 
-      // Calculate break-even sale price: X - (X * fee%) = totalCost → X = totalCost / (1 - fee%)
       const totalCost = purchase + grading + shipping;
       const breakEvenPrice = totalCost / (1 - feeRate / 100);
-
       const targetProfitPrice = (totalCost + desiredProfit) / (1 - feeRate / 100);
 
       document.getElementById('breakEven').textContent = breakEvenPrice.toFixed(2);
@@ -114,6 +115,8 @@
       } else {
         profitField.style.display = 'none';
       }
+
+      resizeIframe();
     }
 
     // Auto-resize for Softr

@@ -41,6 +41,12 @@
       text-align: center;
       margin-top: 0;
     }
+    .description {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
     .result p {
       font-weight: bold;
       margin: 8px 0;
@@ -53,6 +59,11 @@
 <body>
   <div class="container">
     <h2>Grading Break-Even Calculator</h2>
+    <div class="description">
+      Use this tool to estimate the minimum sale price needed to break even after grading and selling a card. 
+      Select your selling platform, enter your costs, and optionally include a target profit to see the sale price you need to hit your goal.
+    </div>
+
     <label>Raw Purchase Price: $<input id="purchasePrice" type="number" step="0.01" placeholder="0.00" /></label>
     <label>Grading Fee: $<input id="gradingFee" type="number" step="0.01" placeholder="0.00" /></label>
     <label>Shipping Cost to Buyer: $<input id="shippingCost" type="number" step="0.01" placeholder="0.00" /></label>
